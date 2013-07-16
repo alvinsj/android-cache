@@ -50,6 +50,10 @@ public abstract class CacheStore {
         dbHelper = new CacheStoreOpenHelper(context, storeName());
     }
     
+    public void close(){
+        dbHelper.close();
+    }
+    
     public boolean put(Cachable c){
         dbHelper.put(c.cacheType(), c.cacheId(), hashMapToJSONString(c.toCache()) );
         return true;
@@ -100,7 +104,10 @@ public abstract class CacheStore {
         HashMap<String, String> map = new HashMap<String, String>();
         JSONObject holder;
         try {
-        	holder = new JSONObject(jsonString);
+        	if(jsonString == null)
+        		holder = new JSONObject();
+        	else
+        		holder = new JSONObject(jsonString);
             Iterator<String> iter = (Iterator<String>) holder.keys();
             
             while(iter.hasNext()) {
