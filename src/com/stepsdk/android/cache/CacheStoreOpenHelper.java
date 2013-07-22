@@ -88,7 +88,9 @@ public class CacheStoreOpenHelper extends SQLiteOpenHelper{
         
         if(cursor.getCount() > 0){
             cursor.moveToFirst();
-            return cursor.getString(cursor.getColumnIndex(VALUE));
+            String result = cursor.getString(cursor.getColumnIndex(VALUE));
+            cursor.close();
+            return result;
         }
         else
             return null;
@@ -110,7 +112,9 @@ public class CacheStoreOpenHelper extends SQLiteOpenHelper{
         
         if(cursor.getCount() > 0){
             cursor.moveToLast();
-            return cursor.getString(cursor.getColumnIndex(VALUE));
+            String result = cursor.getString(cursor.getColumnIndex(VALUE));
+            cursor.close();
+            return result;
         }
         else
             return null;
