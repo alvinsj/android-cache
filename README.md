@@ -1,17 +1,3 @@
-## android-cache
-<b>android-cache</b> is an Android Library Project to provide caching mechanism for other libraries
- 
-### Getting Started
-Useful caching mechanism helps in keeping data offline, networking cache, etc 
+<b>/android-cache</b> is persistent storage microframeworks built on Android SDK, part of [Step](http://step.alvinsj.com).
 
-```
-CacheStore store = manager().cacheStore(); store.put("[type]", "[key]", "[value]");
-```
-
-### How it works?  
-It uses SQLite to store information (type, key, value)
-
-### Related projects
-- [android-apirequest](http://github.com/alvinsj/android-apirequest)  
-- [android-bootstrap](http://github.com/alvinsj/android-bootstrap)
-
+Documentation can be found [here](http://step.alvinsj.com).
